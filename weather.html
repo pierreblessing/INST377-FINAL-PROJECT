@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeatherWise</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e0f7fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #00796b;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    .search-bar {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .search-bar input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .search-bar button {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .search-bar button:hover {
+      background-color: #004d40;
+    }
+    .weather-display, .forecast-display {
+      margin-top: 20px;
+    }
+    .forecast-day {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+    .forecast-day:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WeatherWise</h1>
+  </header>
+
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="location" placeholder="Enter city, zip, or location" />
+      <button onclick="fetchWeather()">Search</button>
+    </div>
+
+    <div class="weather-display" id="weatherDisplay"></div>
+    <div class="forecast-display" id="forecastDisplay"></div>
+  </div>
+
+  <script>
+    const apiKey = 'ebd0d30bc4324bc7b53185110240711';
+
+    async function fetchWeather() {
+      const location = document.getElementById('location').value;
+      if (!location) return alert('Please enter a location.');
+
+      try {
+        // This fetches the current weather
+        const weatherResponse = await fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`);
+        const weatherData = await weatherResponse.json();
+
+        // this fetches the 7-day forecast
+        const forecastResponse = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=7`);
+        const forecastData = await forecastResponse.json();
+
+        displayWeather(weatherData);
+        displayForecast(forecastData.forecast.forecastday);
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+        alert('Could not retrieve weather data. Please try again.');
+      }
+    }
+
+    function displayWeather(data) {
+      const weatherDisplay = document.getElementById('weatherDisplay');
+      weatherDisplay.innerHTML = `
+        <h2>Current Weather in ${data.location.name}</h2>
+        <p>Temperature: ${data.current.temp_c}°C / ${data.current.temp_f}°F</p>
+        <p>Condition: ${data.current.condition.text}</p>
+        <img src="https:${data.current.condition.icon}" alt="Weather Icon" />
+        <p>Wind: ${data.current.wind_kph} kph</p>
+        <p>Humidity: ${data.current.humidity}%</p>
+      `;
+    }
+
+    function displayForecast(forecastDays) {
+      const forecastDisplay = document.getElementById('forecastDisplay');
+      forecastDisplay.innerHTML = '<h3>7-Day Forecast</h3>';
+
+      forecastDays.forEach(day => {
+        forecastDisplay.innerHTML += `
+          <div class="forecast-day">
+            <h4>${day.date}</h4>
+            <p>Max Temp: ${day.day.maxtemp_c}°C</p>
+            <p>Min Temp: ${day.day.mintemp_c}°C</p>
+            <p>Condition: ${day.day.condition.text}</p>
+            <img src="https:${day.day.condition.icon}" alt="Forecast Icon" />
+          </div>
+        `;
+      });
+    }
+  </script>
+</body>
+</html>
