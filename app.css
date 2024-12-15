@@ -66,6 +66,7 @@ header {
     color: teal;
 }
 
+
 #FAQ h3 {
     color: teal;
 }
@@ -74,6 +75,11 @@ header {
     font-size: 14px;
 }
 
+
+#FAQ:hover{
+   background-color: rgb(37, 37, 234);
+   color: aliceblue;
+}
 .container {
     display: flex;
     margin: 50px;
@@ -92,6 +98,8 @@ header {
 
 .boxes:hover {
     transform: scale(1.05);
+    background-color: blue;
+    color: azure;
 }
 
 .boxesAbout {
@@ -104,4 +112,6 @@ header {
 
 .boxesAbout:hover {
     transform: scale(1.05);
+    background-color:blue;
+    color: white;
 }
