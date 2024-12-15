@@ -1,0 +1,75 @@
+/* body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue; 
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* header */
+header {
+    background-color: teal;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+/* nav */
+#main-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+#main-nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#main-nav a {
+    text-decoration: none;
+    color: #00796b;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#main-nav a:hover {
+    color: #004d40;
+}
+
+/* main header */
+#header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* image */
+#image {
+    display: block;
+    margin: 20px auto;
+    max-width: 80%;
+    border-radius: 8px;
+}
+
+/* faq css check again? */
+#FAQ {
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#FAQ h2 {
+    color: teal;
+}
+
+#FAQ h3 {
+    color: teal;
+}
+
+#FAQ p {
+    font-size: 14px;
+}
