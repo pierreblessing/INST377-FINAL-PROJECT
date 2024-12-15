@@ -83,15 +83,33 @@ header {
 }
 
 .boxes {
-    background-color: white;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 30px grey;
     width: 450px;
+    background: linear-gradient(180deg, seagreen, lightblue);
 }
 
 .boxes:hover {
     transform: scale(1.05);
+}
+
+.search-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-bar input {
+    border:0;
+    outline: 0;
+    background: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
 }
 
 .boxesAbout {
