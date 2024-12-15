@@ -73,3 +73,35 @@ header {
 #FAQ p {
     font-size: 14px;
 }
+
+.container {
+    display: flex;
+    margin: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.boxes {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 30px grey;
+    width: 450px;
+}
+
+.boxes:hover {
+    transform: scale(1.05);
+}
+
+.boxesAbout {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 30px grey;
+    width: 60%;
+}
+
+.boxesAbout:hover {
+    transform: scale(1.05);
+}

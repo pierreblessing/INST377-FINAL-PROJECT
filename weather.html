@@ -9,24 +9,32 @@
  
 </head>
 <body>
-  <header id="bar"><h1>Weather App</h1></header>
+  <header><h1>Weather App</h1></header>
     <nav id="main-nav">
         <ul>
-            <li><a href="home.html" style="text-decoration:none;">Home</a></li>
-            <li><a href="about.html" style="text-decoration:none;">About Us</a></li>
-            <li><a href="weather.html" style="text-decoration:none;">Weather App</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="weather.html">Weather App</a></li>
         </ul>
     </nav>
 
-  <div class="container">
-    <div class="search-bar">
-      <input type="text" id="location" placeholder="Enter city, zip, or location" />
-      <button onclick="fetchWeather()">Search</button>
-    </div>
 
-    <div class="weather-display" id="weatherDisplay"></div>
-    <div class="forecast-display" id="forecastDisplay"></div>
+
+  <div class="container">
+    <div class="boxes">
+      <h2>Get your Local Forecast Today!</h2>
+      <div class="search-bar">
+        <input type="text" id="location" placeholder="Enter City, Zip, or Location">
+        <button onclick="fetchWeather()">Search</button>
+      </div>
+  
+      <div class="weather-display" id="weatherDisplay"></div>
+      <div class="forecast-display" id="forecastDisplay"></div>
+    </div>
   </div>
+
+
+
 
   <script>
     const apiKey = 'ebd0d30bc4324bc7b53185110240711';
