@@ -195,7 +195,8 @@ div[data-simple-slider] {
 /* all three images */
 #image {
     display: block;
-    width: 100%; 
-    height: auto;  
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     margin: 0 auto; 
 }
