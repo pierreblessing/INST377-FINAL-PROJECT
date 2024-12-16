@@ -30,15 +30,15 @@ app.get('/username', async (req, res) => {
   }
 });
 
-app.post('/username', async (req, res) => {
+app.post('/377customertable', async (req, res) => {
   console.log('Attempting to add username.');
   console.log('Request', req.body);
 
-  const usernameDB = req.body.firstName;
-  const passwordDB = req.body.lastName;
+  const usernameDB = req.body.username;
+  const passwordDB = req.body.password;
 
   const { data, error } = await supabase
-    .from('username')
+    .from('377customertable')
     .insert({
       username: usernameDB,
       password: passwordDB,

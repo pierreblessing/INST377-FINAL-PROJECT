@@ -25,16 +25,12 @@ async function loadCustomerData() {
       const tableRow = document.createElement('tr');
 
       const tableHeading1 = document.createElement('th');
-      tableHeading1.innerHTML = 'First Name';
+      tableHeading1.innerHTML = 'username';
       tableRow.appendChild(tableHeading1);
 
       const tableHeading2 = document.createElement('th');
-      tableHeading2.innerHTML = 'Last Name';
+      tableHeading2.innerHTML = 'password';
       tableRow.appendChild(tableHeading2);
-
-      const tableHeading3 = document.createElement('th');
-      tableHeading3.innerHTML = 'State';
-      tableRow.appendChild(tableHeading3);
 
       table.appendChild(tableRow);
 
@@ -42,15 +38,12 @@ async function loadCustomerData() {
         const customerTableRow = document.createElement('tr');
         const customerTableFirstName = document.createElement('td');
         const customerTableLastName = document.createElement('td');
-        const customerTableState = document.createElement('td');
 
         customerTableFirstName.innerHTML = customer.customer_first_name;
         customerTableLastName.innerHTML = customer.customer_last_name;
-        customerTableState.innerHTML = customer.customer_state;
 
         customerTableRow.appendChild(customerTableFirstName);
         customerTableRow.appendChild(customerTableLastName);
-        customerTableRow.appendChild(customerTableState);
 
         table.appendChild(customerTableRow);
       });

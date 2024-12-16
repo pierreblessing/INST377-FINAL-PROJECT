@@ -163,7 +163,7 @@ header {
     font-weight: bold;
 }
 
-#signinInput {
+input {
     display: block;
     width: 100%;
     margin-bottom: 15px;
