@@ -183,3 +183,19 @@ header {
     width: 100%;
     font-size: 20px;
 }
+
+/* container becomes bigger */
+div[data-simple-slider] {
+    width: 40%; 
+    height: 300px; 
+    margin: 0 auto; 
+    text-align: center;
+}
+
+/* all three images */
+#image {
+    display: block;
+    width: 100%; 
+    height: auto;  
+    margin: 0 auto; 
+}
