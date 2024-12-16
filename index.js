@@ -7,19 +7,19 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
-const supabaseUrl = 'https://rqkwwyoaeswcmxqprmrl.supabase.co';
+const supabaseUrl = 'https://cdbifbbxpkexrjosnbkp.supabase.co';
 const supabaseKey =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxa3d3eW9hZXN3Y214cXBybXJsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzE3OTQ3MzUsImV4cCI6MjA0NzM3MDczNX0.lFCNsUJeZjfkpjqGpt7JMwrRFTwehd-WK4feasXTwf8';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNkYmlmYmJ4cGtleHJqb3NuYmtwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQzMjA1MjksImV4cCI6MjA0OTg5NjUyOX0.Q0KX-XFhT6oITbG0XJpOL-npCT6RlIxbs0AmUFdOBzo';
 const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey);
 
 app.get('/', (req, res) => {
   res.sendFile('public/signin.html', { root: __dirname });
 });
 
-app.get('/customers', async (req, res) => {
-  console.log('Attempting to get all customers.');
+app.get('/username', async (req, res) => {
+  console.log('Attempting to get all usernames.');
 
-  const { data, error } = await supabase.from('customer').select();
+  const { data, error } = await supabase.from('username').select();
 
   if (error) {
     console.log('Error:', error);
@@ -30,18 +30,18 @@ app.get('/customers', async (req, res) => {
   }
 });
 
-app.post('/customer', async (req, res) => {
-  console.log('Attempting to add Customer.');
+app.post('/username', async (req, res) => {
+  console.log('Attempting to add username.');
   console.log('Request', req.body);
 
-  const firstName = req.body.firstName;
-  const lastName = req.body.lastName;
+  const usernameDB = req.body.firstName;
+  const passwordDB = req.body.lastName;
 
   const { data, error } = await supabase
-    .from('customer')
+    .from('username')
     .insert({
-      customer_first_name: firstName,
-      customer_last_name: lastName,
+      username: usernameDB,
+      password: passwordDB,
     })
     .select();
 

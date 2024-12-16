@@ -18,8 +18,8 @@
     </nav>
 
     <div class="login-container">
-        <form id="loginform" action="home.html">
-          <label id="signinID" for="first">Username:</label>
+        <form id="loginform" onsubmit="createAccount(); return false" action="home.html">
+          <label id="signinID" for="username">Username:</label>
           <input id="signinInput" type="text" placeholder="Username" name="username">
 
           <label id="signinID" for="password">Password:</label>
