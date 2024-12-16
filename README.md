@@ -12,8 +12,6 @@ WeatherWise is designed to be responsive and compatible across multiple platform
 - **Mobile Browsers:** iOS Safari (iOS 14+), Chrome for Android (Android 10+), Samsung Internet (latest version)
 
 ## Developer Manual
-Here’s the information from the provided content formatted for the **Developer Manual** section of the **README.md** file:
-
 ---
 This Developer Manual provides the essential information to set up, run, and contribute to the **WeatherWise** app. Below, you’ll find instructions on how to get started, structure details, and key integrations that drive the application.
 
