@@ -10,10 +10,13 @@
     <header id="bar"><h1>Sign In Page</h1></header>
 
     <div class="login-container">
-        <form action="home.html">
-          <input type="text" placeholder="Username" name="username">
-          <input type="text" placeholder="Password" name="psw">
-          <button type="submit">Login</button>
+        <form id="loginform" action="home.html">
+          <label id="signinID" for="first">Username:</label>
+          <input id="signinInput" type="text" placeholder="Username" name="username">
+
+          <label id="signinID" for="password">Password:</label>
+          <input id="signinInput" type="text" placeholder="Password" name="psw">
+          <button id="signinButton" type="submit">Login</button>
         </form>
       </div>
 </body>
