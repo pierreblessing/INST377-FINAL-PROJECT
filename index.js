@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 app.get('/username', async (req, res) => {
   console.log('Attempting to get all usernames.');
 
-  const { data, error } = await supabase.from('username').select();
+  const { data, error } = await supabase.from('377customertable').select();
 
   if (error) {
     console.log('Error:', error);
