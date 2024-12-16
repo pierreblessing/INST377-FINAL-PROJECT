@@ -19,7 +19,7 @@ header {
 #main-nav ul {
     list-style: none;
     padding: 0;
-    text-align: center;
+    text-align: center; 
     margin: 0;
 }
 
@@ -89,17 +89,35 @@ header {
 }
 
 .boxes {
-    background-color: white;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 30px grey;
     width: 450px;
+    background: linear-gradient(180deg, seagreen, lightblue);
 }
 
 .boxes:hover {
     transform: scale(1.05);
     background-color: blue;
     color: azure;
+}
+
+.search-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-bar input {
+    border:0;
+    outline: 0;
+    background: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
 }
 
 .boxesAbout {
@@ -114,4 +132,54 @@ header {
     transform: scale(1.05);
     background-color:blue;
     color: white;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    flex-direction: column;
+    margin: 5%;
+}
+
+#loginform {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 500px;
+    text-align: center;
+}
+
+#signinID {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+}
+
+#signinInput {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#signinButton {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: teal;
+    width: 100%;
+    font-size: 20px;
 }
