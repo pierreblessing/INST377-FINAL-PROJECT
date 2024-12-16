@@ -1,7 +1,6 @@
 const express = require('express');
 const supabaseClient = require('@supabase/supabase-js');
 const bodyParser = require('body-parser');
-const { isValidStateAbbreviation } = require('usa-state-validator');
 
 const app = express();
 const port = 3000;
@@ -14,7 +13,7 @@ const supabaseKey =
 const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey);
 
 app.get('/', (req, res) => {
-  res.sendFile('public/INST377-Week12-Customers.html', { root: __dirname });
+  res.sendFile('public/signin.html', { root: __dirname });
 });
 
 app.get('/customers', async (req, res) => {
@@ -37,25 +36,12 @@ app.post('/customer', async (req, res) => {
 
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
-  const userState = req.body.userState;
-
-  if (!isValidStateAbbreviation(userState)) {
-    console.error(`State ${userState} is Invalid :(`);
-    res.statusCode = 400;
-    res.header('Content-Type', 'application/json');
-    const stateInvalidErrorJson = {
-      message: `${userState} is not a valid State Abbreviation`,
-    };
-    res.send(JSON.stringify(stateInvalidErrorJson));
-    return;
-  }
 
   const { data, error } = await supabase
     .from('customer')
     .insert({
       customer_first_name: firstName,
       customer_last_name: lastName,
-      customer_state: userState,
     })
     .select();
 
