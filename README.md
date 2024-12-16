@@ -11,5 +11,7 @@ WeatherWise is designed to be responsive and compatible across multiple platform
 - **Desktop Browsers:** Google Chrome, Mozilla Firefox, Microsoft Edge, Safari (latest versions)
 - **Mobile Browsers:** iOS Safari (iOS 14+), Chrome for Android (Android 10+), Samsung Internet (latest version)
 
-Link to developer manual here:
+## Developer Manual
+
+Information for Developer Manual here
 
