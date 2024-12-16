@@ -1,4 +1,4 @@
-Title: WeatherWise App by Forecast Five
+## Title: WeatherWise App by Forecast Five
 
 ## Project Description
 Our goal is to provide you with accurate weather information based on any given area. Our application within the website is called WeatherWise. 
